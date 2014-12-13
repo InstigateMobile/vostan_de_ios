@@ -1,6 +1,6 @@
 //
-//  Vostan_Natoive_iOSTests.m
-//  Vostan_Natoive_iOSTests
+//  Vostan_Native_iOSTests.m
+//  Vostan_Native_iOSTests
 //
 //  Created by Macadamian User on 12/13/14.
 //  Copyright (c) 2014 AUA. All rights reserved.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface Vostan_Natoive_iOSTests : XCTestCase
+@interface Vostan_Native_iOSTests : XCTestCase
 
 @end
 
-@implementation Vostan_Natoive_iOSTests
+@implementation Vostan_Native_iOSTests
 
 - (void)setUp {
     [super setUp];

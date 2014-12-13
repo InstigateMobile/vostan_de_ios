@@ -1,18 +1,18 @@
 //
 //  ViewController.m
-//  Vostan_Natoive_iOS
+//  Vostan_Native_iOS
 //
-//  Created by Macadamian User on 12/13/14.
-//  Copyright (c) 2014 AUA. All rights reserved.
+//  Copyright (c) 2014. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
+#import "VModelHandler.h"
 
-@interface ViewController ()
+@interface MainViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MainViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -22,6 +22,11 @@
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onClick:(id)sender
+{
+  [[VModelHandler instance] testConnectToVostan];
 }
 
 @end
