@@ -7,25 +7,78 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="pSy-UU-Vbi">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="tJS-iu-dOh">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Tth-SX-xvi">
-                                <rect key="frame" x="-23" y="-15" width="133" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="View Vostan">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vts-xe-dm4"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                <viewController id="BYZ-38-t0r" customClass="VMainViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kDf-Yr-xjY"/>
+                        <viewControllerLayoutGuide type="bottom" id="avG-YH-bed"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zGc-gd-GHI" userLabel="Main View">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Zd-52-aX1" userLabel="Graph View" customClass="VGraphView">
+                                <rect key="frame" x="0.0" y="70" width="600" height="530"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ciF-sW-8Tc" userLabel="Top View">
+                                <rect key="frame" x="0.0" y="20" width="600" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HT7-w3-AoN">
+                                        <rect key="frame" x="32" y="10" width="67" height="30"/>
+                                        <state key="normal" title="Test Load">
+                                            <color key="titleColor" red="1" green="0.98097631399999996" blue="0.93613946810000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PJS-ZJ-aNF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.4602210853" green="0.69293566419999997" blue="0.89395328439999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MH7-7y-gDy"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Zd-52-aX1" firstAttribute="left" secondItem="zGc-gd-GHI" secondAttribute="left" id="0tg-62-52B"/>
+                            <constraint firstItem="avG-YH-bed" firstAttribute="top" secondItem="3Zd-52-aX1" secondAttribute="bottom" id="EMW-hl-A5j"/>
+                            <constraint firstAttribute="right" secondItem="ciF-sW-8Tc" secondAttribute="right" id="NW3-Hb-CaT"/>
+                            <constraint firstItem="ciF-sW-8Tc" firstAttribute="left" secondItem="zGc-gd-GHI" secondAttribute="left" id="eQo-TA-jdF">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="3Zd-52-aX1" firstAttribute="top" secondItem="kDf-Yr-xjY" secondAttribute="bottom" id="tDt-Hd-l9c">
+                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                            </constraint>
+                            <constraint firstItem="ciF-sW-8Tc" firstAttribute="top" secondItem="kDf-Yr-xjY" secondAttribute="bottom" id="wSL-f1-hw6"/>
+                            <constraint firstAttribute="right" secondItem="3Zd-52-aX1" secondAttribute="right" id="wug-d2-bE9"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="tDt-Hd-l9c"/>
+                                <exclude reference="wSL-f1-hw6"/>
+                                <exclude reference="EMW-hl-A5j"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="tDt-Hd-l9c"/>
+                                <include reference="wSL-f1-hw6"/>
+                                <include reference="EMW-hl-A5j"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="pSy-UU-Vbi"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="graphView" destination="3Zd-52-aX1" id="HWV-re-obz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981" y="-289"/>
+            <point key="canvasLocation" x="981" y="-289.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CcH-uX-8XS">

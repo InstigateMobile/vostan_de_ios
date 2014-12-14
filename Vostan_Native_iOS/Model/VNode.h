@@ -7,7 +7,7 @@
 
 @interface VNode : NSObject
 
-@property NSUInteger *nodeID;
+@property NSUInteger nodeID;
 @property CGRect nodeRect;
 
 @property BOOL isLeaf;

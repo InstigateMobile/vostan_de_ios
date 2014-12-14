@@ -14,8 +14,8 @@
   self = [super init];
   if (self) {
 
-    self.nodeID = (NSUInteger *)[[dict objectForKey:@"nodeID"] integerValue];
-    self.linkedNodeID = (NSUInteger *)[[dict objectForKey:@"linkedNodeID"] integerValue];
+    self.nodeID = [[dict objectForKey:@"nodeID"] integerValue];
+    self.linkedNodeID = [[dict objectForKey:@"linkedNodeID"] integerValue];
     self.linkTags = [dict objectForKey:@"linkTags"];
   }
   

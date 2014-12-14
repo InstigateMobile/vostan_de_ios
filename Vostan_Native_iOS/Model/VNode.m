@@ -13,7 +13,7 @@
 {
   self = [super init];
   if (self) {
-    self.nodeID = (NSUInteger *)[[dict objectForKey:@"nodeID"] integerValue];
+    self.nodeID = [[dict objectForKey:@"nodeID"] integerValue];
     self.nodeRect = CGRectMake([[dict objectForKey:@"left"] floatValue],
                                [[dict objectForKey:@"top"] floatValue],
                                [[dict objectForKey:@"width"] floatValue],

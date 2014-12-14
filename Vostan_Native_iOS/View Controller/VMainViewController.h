@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController
+@interface VMainViewController : UIViewController
 
 
 @end

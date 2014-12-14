@@ -2,16 +2,16 @@
 //  VModelHandler.m
 //  Vostan_Native_iOS
 //
-//  Created by Macadamian User on 12/13/14.
-//  Copyright (c) 2014 AUA. All rights reserved.
+//  Copyright (c) 2014. All rights reserved.
 //
 
 #import "VModelHandler.h"
-#import "VNode.h"
+#import "VGraph.h"
 #import "AFHTTPRequestOperationManager.h"
 
 @interface VModelHandler ()
 @property (nonatomic, strong) AFSecurityPolicy *securityPolicy;
+@property (nonatomic, strong) NSMutableDictionary *tempCache;
 
 @end
 
@@ -19,7 +19,6 @@
 
 static VModelHandler *instance = nil;
 
-// Get the shared instance and create it if necessary.
 + (VModelHandler *)instance
 {
   if (instance == nil) {
@@ -34,31 +33,34 @@ static VModelHandler *instance = nil;
   if (self) {
     _securityPolicy = [[AFSecurityPolicy alloc] init];
     [_securityPolicy setAllowInvalidCertificates:YES];
+    
+//    [[AFHTTPRequestOperationManager manager] setSecurityPolicy:_securityPolicy];
   }
   return self;
 }
 
-#pragma  mark - 
+#pragma  mark -
+- (NSString *)getFormatedRequestStringForDomain:(NSString *)domain andRootID:(NSUInteger)rootID {
+  return [NSString stringWithFormat:@"http://%@/api.php/map/root/%i/lang/hy", domain, (int)rootID];
+}
 
-- (void)testConnectToVostan {
-//  NSString *urlString = [NSString stringWithFormat:@"https://edu.vostan.net/erp/vostan_DE_iOS_native_app/api.php/map/root/5/lang/en"];
-  NSString *urlString = [NSString stringWithFormat:@"http://ggg.instigate-training-center.am/api.php/map/root/1/lang/hy"];
-  
-  NSURL *URL = [NSURL URLWithString:urlString];
-  NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+#pragma  mark -
+- (void)requestGraphWithRoot:(int)root fromGGG:(NSString *)ggg completion:(void (^)(VGraph *))block {
+  NSString *string = [self getFormatedRequestStringForDomain:ggg andRootID:root];
+  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:string]];
   AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
   [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
     NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:nil];
-    NSArray *nodes = [jsonDict objectForKey:@"nodes"];
-    NSArray *links = [jsonDict objectForKey:@"links"];
-    
+    if (jsonDict) {
+      VGraph *graph = [[VGraph alloc] initWithDictionary:jsonDict];
+      block(graph);
+    }
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     NSLog(@"Error: %@", error.description);
   }];
-
+  
   operation.securityPolicy = _securityPolicy;
   [operation start];
 }
-
 
 @end

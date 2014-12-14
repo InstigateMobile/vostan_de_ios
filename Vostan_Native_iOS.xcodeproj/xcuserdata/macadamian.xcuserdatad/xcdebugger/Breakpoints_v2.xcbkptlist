@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Vostan_Native_iOS/Model/VModelHandler.m"
-            timestampString = "440245992.134208"
+            filePath = "Vostan_Native_iOS/View/VNodeView.m"
+            timestampString = "440356103.195005"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "-testConnectToVostan"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "-initWithNode:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

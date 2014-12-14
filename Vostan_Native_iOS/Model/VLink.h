@@ -7,8 +7,8 @@
 
 @interface VLink : NSObject
 
-@property NSUInteger *nodeID;
-@property NSUInteger *linkedNodeID;
+@property NSUInteger nodeID;
+@property NSUInteger linkedNodeID;
 @property NSString *linkTags;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;

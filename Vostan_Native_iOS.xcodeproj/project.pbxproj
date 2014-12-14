@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D639B2D91A3F3F980057FD44 /* VGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = D639B2D81A3F3F980057FD44 /* VGraph.m */; };
+		D639B2DD1A3F4B770057FD44 /* VColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D639B2DC1A3F4B770057FD44 /* VColor.m */; };
 		D6C26F0C1A3C7ABF000B94AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C26F0B1A3C7ABF000B94AF /* main.m */; };
 		D6C26F0F1A3C7ABF000B94AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C26F0E1A3C7ABF000B94AF /* AppDelegate.m */; };
 		D6C26F151A3C7ABF000B94AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6C26F131A3C7ABF000B94AF /* Main.storyboard */; };
@@ -26,8 +28,10 @@
 		D6C26F541A3C9EEA000B94AF /* VNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C26F531A3C9EEA000B94AF /* VNode.m */; };
 		D6C26F571A3CA646000B94AF /* VLink.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C26F561A3CA646000B94AF /* VLink.m */; };
 		D6C26F591A3D9628000B94AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C26F581A3D9628000B94AF /* CoreGraphics.framework */; };
-		D6C26F5E1A3DA902000B94AF /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C26F5D1A3DA902000B94AF /* MainViewController.m */; };
+		D6C26F5E1A3DA902000B94AF /* VMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C26F5D1A3DA902000B94AF /* VMainViewController.m */; };
 		D6C26F641A3DAFBB000B94AF /* web.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C26F631A3DAFBB000B94AF /* web.png */; };
+		D6C26F791A3DC074000B94AF /* VNodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C26F781A3DC074000B94AF /* VNodeView.m */; };
+		D6D4502B1A3F2FBD00253CDB /* VGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D4502A1A3F2FBD00253CDB /* VGraphView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D639B2D71A3F3F980057FD44 /* VGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VGraph.h; sourceTree = "<group>"; };
+		D639B2D81A3F3F980057FD44 /* VGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VGraph.m; sourceTree = "<group>"; };
+		D639B2DB1A3F4B770057FD44 /* VColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VColor.h; sourceTree = "<group>"; };
+		D639B2DC1A3F4B770057FD44 /* VColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VColor.m; sourceTree = "<group>"; };
 		D6C26F061A3C7ABF000B94AF /* Vostan_Native_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vostan_Native_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C26F0A1A3C7ABF000B94AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6C26F0B1A3C7ABF000B94AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -78,10 +86,14 @@
 		D6C26F551A3CA646000B94AF /* VLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLink.h; sourceTree = "<group>"; };
 		D6C26F561A3CA646000B94AF /* VLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLink.m; sourceTree = "<group>"; };
 		D6C26F581A3D9628000B94AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D6C26F5C1A3DA902000B94AF /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		D6C26F5D1A3DA902000B94AF /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		D6C26F5C1A3DA902000B94AF /* VMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMainViewController.h; sourceTree = "<group>"; };
+		D6C26F5D1A3DA902000B94AF /* VMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMainViewController.m; sourceTree = "<group>"; };
 		D6C26F631A3DAFBB000B94AF /* web.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = web.png; sourceTree = "<group>"; };
 		D6C26F651A3DB24B000B94AF /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		D6C26F771A3DC074000B94AF /* VNodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VNodeView.h; sourceTree = "<group>"; };
+		D6C26F781A3DC074000B94AF /* VNodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VNodeView.m; sourceTree = "<group>"; };
+		D6D450291A3F2FBD00253CDB /* VGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VGraphView.h; sourceTree = "<group>"; };
+		D6D4502A1A3F2FBD00253CDB /* VGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VGraphView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +115,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D639B2DA1A3F4B4F0057FD44 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D639B2DB1A3F4B770057FD44 /* VColor.h */,
+				D639B2DC1A3F4B770057FD44 /* VColor.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		D6C26EFD1A3C7ABF000B94AF = {
 			isa = PBXGroup;
 			children = (
@@ -125,9 +146,11 @@
 		D6C26F081A3C7ABF000B94AF /* Vostan_Native_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D6C26F341A3C858D000B94AF /* Library */,
-				D6C26F301A3C7BBF000B94AF /* View Controller */,
+				D639B2DA1A3F4B4F0057FD44 /* Category */,
 				D6C26F2F1A3C7BA2000B94AF /* Model */,
+				D6C26F711A3DBFAE000B94AF /* View */,
+				D6C26F301A3C7BBF000B94AF /* View Controller */,
+				D6C26F341A3C858D000B94AF /* Library */,
 				D6C26F0D1A3C7ABF000B94AF /* AppDelegate.h */,
 				D6C26F0E1A3C7ABF000B94AF /* AppDelegate.m */,
 				D6C26F131A3C7ABF000B94AF /* Main.storyboard */,
@@ -169,12 +192,14 @@
 		D6C26F2F1A3C7BA2000B94AF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D6C26F311A3C7EF7000B94AF /* VModelHandler.h */,
-				D6C26F321A3C7EF7000B94AF /* VModelHandler.m */,
+				D639B2D71A3F3F980057FD44 /* VGraph.h */,
+				D639B2D81A3F3F980057FD44 /* VGraph.m */,
 				D6C26F521A3C9EEA000B94AF /* VNode.h */,
 				D6C26F531A3C9EEA000B94AF /* VNode.m */,
 				D6C26F551A3CA646000B94AF /* VLink.h */,
 				D6C26F561A3CA646000B94AF /* VLink.m */,
+				D6C26F311A3C7EF7000B94AF /* VModelHandler.h */,
+				D6C26F321A3C7EF7000B94AF /* VModelHandler.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,8 +207,8 @@
 		D6C26F301A3C7BBF000B94AF /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D6C26F5C1A3DA902000B94AF /* MainViewController.h */,
-				D6C26F5D1A3DA902000B94AF /* MainViewController.m */,
+				D6C26F5C1A3DA902000B94AF /* VMainViewController.h */,
+				D6C26F5D1A3DA902000B94AF /* VMainViewController.m */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -228,6 +253,17 @@
 				D6C26F631A3DAFBB000B94AF /* web.png */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		D6C26F711A3DBFAE000B94AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D6C26F771A3DC074000B94AF /* VNodeView.h */,
+				D6C26F781A3DC074000B94AF /* VNodeView.m */,
+				D6D450291A3F2FBD00253CDB /* VGraphView.h */,
+				D6D4502A1A3F2FBD00253CDB /* VGraphView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,13 +369,17 @@
 			files = (
 				D6C26F571A3CA646000B94AF /* VLink.m in Sources */,
 				D6C26F4D1A3C85CD000B94AF /* AFSecurityPolicy.m in Sources */,
-				D6C26F5E1A3DA902000B94AF /* MainViewController.m in Sources */,
+				D6C26F5E1A3DA902000B94AF /* VMainViewController.m in Sources */,
 				D6C26F0F1A3C7ABF000B94AF /* AppDelegate.m in Sources */,
 				D6C26F4A1A3C85CD000B94AF /* AFHTTPRequestOperationManager.m in Sources */,
 				D6C26F4E1A3C85CD000B94AF /* AFURLConnectionOperation.m in Sources */,
+				D6C26F791A3DC074000B94AF /* VNodeView.m in Sources */,
+				D639B2D91A3F3F980057FD44 /* VGraph.m in Sources */,
+				D6D4502B1A3F2FBD00253CDB /* VGraphView.m in Sources */,
 				D6C26F491A3C85CD000B94AF /* AFHTTPRequestOperation.m in Sources */,
 				D6C26F541A3C9EEA000B94AF /* VNode.m in Sources */,
 				D6C26F0C1A3C7ABF000B94AF /* main.m in Sources */,
+				D639B2DD1A3F4B770057FD44 /* VColor.m in Sources */,
 				D6C26F4F1A3C85CD000B94AF /* AFURLRequestSerialization.m in Sources */,
 				D6C26F4B1A3C85CD000B94AF /* AFHTTPSessionManager.m in Sources */,
 				D6C26F4C1A3C85CD000B94AF /* AFNetworkReachabilityManager.m in Sources */,
