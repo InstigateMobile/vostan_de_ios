@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D60FA4461A4567ED004209AD /* GGGTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60FA4451A4567ED004209AD /* GGGTableViewCell.xib */; };
 		D639B2D91A3F3F980057FD44 /* VGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = D639B2D81A3F3F980057FD44 /* VGraph.m */; };
 		D639B2DD1A3F4B770057FD44 /* VColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D639B2DC1A3F4B770057FD44 /* VColor.m */; };
+		D639B2E21A3F6E460057FD44 /* GGGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D639B2E01A3F6E460057FD44 /* GGGTableViewCell.m */; };
+		D639B2E51A3F6ED70057FD44 /* check_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = D639B2E41A3F6ED70057FD44 /* check_mark.png */; };
 		D6C26F0C1A3C7ABF000B94AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C26F0B1A3C7ABF000B94AF /* main.m */; };
 		D6C26F0F1A3C7ABF000B94AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C26F0E1A3C7ABF000B94AF /* AppDelegate.m */; };
 		D6C26F151A3C7ABF000B94AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6C26F131A3C7ABF000B94AF /* Main.storyboard */; };
@@ -45,10 +48,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D60FA4451A4567ED004209AD /* GGGTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GGGTableViewCell.xib; sourceTree = "<group>"; };
 		D639B2D71A3F3F980057FD44 /* VGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VGraph.h; sourceTree = "<group>"; };
 		D639B2D81A3F3F980057FD44 /* VGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VGraph.m; sourceTree = "<group>"; };
 		D639B2DB1A3F4B770057FD44 /* VColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VColor.h; sourceTree = "<group>"; };
 		D639B2DC1A3F4B770057FD44 /* VColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VColor.m; sourceTree = "<group>"; };
+		D639B2DF1A3F6E460057FD44 /* GGGTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGGTableViewCell.h; sourceTree = "<group>"; };
+		D639B2E01A3F6E460057FD44 /* GGGTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGGTableViewCell.m; sourceTree = "<group>"; };
+		D639B2E41A3F6ED70057FD44 /* check_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_mark.png; sourceTree = "<group>"; };
 		D6C26F061A3C7ABF000B94AF /* Vostan_Native_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vostan_Native_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C26F0A1A3C7ABF000B94AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6C26F0B1A3C7ABF000B94AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -122,6 +129,16 @@
 				D639B2DC1A3F4B770057FD44 /* VColor.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		D639B2E61A3F6FCB0057FD44 /* GGGTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D639B2DF1A3F6E460057FD44 /* GGGTableViewCell.h */,
+				D639B2E01A3F6E460057FD44 /* GGGTableViewCell.m */,
+				D60FA4451A4567ED004209AD /* GGGTableViewCell.xib */,
+			);
+			name = GGGTableViewCell;
 			sourceTree = "<group>";
 		};
 		D6C26EFD1A3C7ABF000B94AF = {
@@ -250,6 +267,7 @@
 		D6C26F621A3DAFAE000B94AF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				D639B2E41A3F6ED70057FD44 /* check_mark.png */,
 				D6C26F631A3DAFBB000B94AF /* web.png */,
 			);
 			path = Assets;
@@ -258,6 +276,7 @@
 		D6C26F711A3DBFAE000B94AF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D639B2E61A3F6FCB0057FD44 /* GGGTableViewCell */,
 				D6C26F771A3DC074000B94AF /* VNodeView.h */,
 				D6C26F781A3DC074000B94AF /* VNodeView.m */,
 				D6D450291A3F2FBD00253CDB /* VGraphView.h */,
@@ -347,6 +366,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6C26F641A3DAFBB000B94AF /* web.png in Resources */,
+				D639B2E51A3F6ED70057FD44 /* check_mark.png in Resources */,
+				D60FA4461A4567ED004209AD /* GGGTableViewCell.xib in Resources */,
 				D6C26F151A3C7ABF000B94AF /* Main.storyboard in Resources */,
 				D6C26F1A1A3C7ABF000B94AF /* LaunchScreen.xib in Resources */,
 				D6C26F171A3C7ABF000B94AF /* Images.xcassets in Resources */,
@@ -378,6 +399,7 @@
 				D6D4502B1A3F2FBD00253CDB /* VGraphView.m in Sources */,
 				D6C26F491A3C85CD000B94AF /* AFHTTPRequestOperation.m in Sources */,
 				D6C26F541A3C9EEA000B94AF /* VNode.m in Sources */,
+				D639B2E21A3F6E460057FD44 /* GGGTableViewCell.m in Sources */,
 				D6C26F0C1A3C7ABF000B94AF /* main.m in Sources */,
 				D639B2DD1A3F4B770057FD44 /* VColor.m in Sources */,
 				D6C26F4F1A3C85CD000B94AF /* AFURLRequestSerialization.m in Sources */,

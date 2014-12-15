@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VMainViewController : UIViewController
+@interface VMainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 
 @end

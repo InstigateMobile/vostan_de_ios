@@ -35,8 +35,10 @@
 @property CGRect imageRect;
 @property BOOL imageVisible;
 
+@property NSString *domain;
 
-- (id)initWithDictionary:(NSDictionary *)dictionary;
+
+- (id)initWithDictionary:(NSDictionary *)dictionary domain:(NSString *)domain;
 
 
 @end

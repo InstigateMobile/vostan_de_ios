@@ -14,7 +14,7 @@
 @property NSArray *nodes;
 @property NSArray *links;
 
-- (id)initWithDictionary:(NSDictionary *)dictionary;
+- (id)initWithDictionary:(NSDictionary *)dictionary andDomain:(NSString *)domain;
 - (VNode *)nodeWithID:(NSUInteger)nodeID;
 
 @end

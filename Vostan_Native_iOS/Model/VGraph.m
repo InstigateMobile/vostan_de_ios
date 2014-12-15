@@ -11,7 +11,7 @@
 
 @implementation VGraph
 
-- (id)initWithDictionary:(NSDictionary *)dict
+- (id)initWithDictionary:(NSDictionary *)dict andDomain:(NSString *)domain
 {
   self = [super init];
   if (self) {
@@ -22,7 +22,7 @@
     NSMutableArray *links = [@[] mutableCopy];
     
     for (NSDictionary *nodeDict in nodeDictArray) {
-      [nodes addObject:[[VNode alloc] initWithDictionary:nodeDict]];
+      [nodes addObject:[[VNode alloc] initWithDictionary:nodeDict domain:domain]];
     }
     for (NSDictionary *linkDict in linkDictArray) {
       [links addObject:[[VLink alloc] initWithDictionary:linkDict]];
@@ -31,6 +31,7 @@
     _nodes = [NSArray arrayWithArray:nodes];
     _links = [NSArray arrayWithArray:links];
     _rootID = [[dict objectForKey:@"root"] unsignedIntegerValue];
+    _domain = domain;
 
   }
   return self;

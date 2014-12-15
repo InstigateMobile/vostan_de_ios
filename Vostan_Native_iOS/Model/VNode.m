@@ -9,7 +9,7 @@
 
 @implementation VNode
 
-- (id)initWithDictionary:(NSDictionary *)dict
+- (id)initWithDictionary:(NSDictionary *)dict domain:(NSString *)domain
 {
   self = [super init];
   if (self) {
@@ -53,6 +53,7 @@
                                 [[dict objectForKey:@"imgWidth"] floatValue],
                                 [[dict objectForKey:@"imgHeight"] floatValue]);
     
+    self.domain = domain;
   }
   
   return self;

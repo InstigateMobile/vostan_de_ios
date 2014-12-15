@@ -25,10 +25,13 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HT7-w3-AoN">
                                         <rect key="frame" x="32" y="10" width="67" height="30"/>
-                                        <state key="normal" title="Test Load">
+                                        <state key="normal" title="GGG List">
                                             <color key="titleColor" red="1" green="0.98097631399999996" blue="0.93613946810000004" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="32" y="10" width="64" height="30"/>
+                                        </variation>
                                         <connections>
                                             <action selector="onClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PJS-ZJ-aNF"/>
                                         </connections>
@@ -56,15 +59,15 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="tDt-Hd-l9c"/>
                                 <exclude reference="wSL-f1-hw6"/>
+                                <exclude reference="tDt-Hd-l9c"/>
                                 <exclude reference="EMW-hl-A5j"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
-                                <include reference="tDt-Hd-l9c"/>
                                 <include reference="wSL-f1-hw6"/>
+                                <include reference="tDt-Hd-l9c"/>
                                 <include reference="EMW-hl-A5j"/>
                             </mask>
                         </variation>

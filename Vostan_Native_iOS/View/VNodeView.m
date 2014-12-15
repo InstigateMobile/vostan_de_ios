@@ -13,7 +13,6 @@
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIWebView *bodyWebView;
-@property (nonatomic, strong) UIView *expandMarkView;
 @property (nonatomic, strong) VNode *node;
 @end
 
@@ -44,27 +43,11 @@
         break;
       }
     }
-  
-    if (![_bodyWebView isHidden]) {
-      [_bodyWebView loadHTMLString:[_node body] baseURL:nil];
-    }
     
     _imageView = [[UIImageView alloc] init];
     [_imageView setHidden:![_node imageVisible]];
     [_imageView setContentMode:UIViewContentModeScaleAspectFit];
     [self addSubview:_imageView];
-    
-//    if (![_node isLeaf]) {
-//      _expandMarkView = [[UIView alloc] init];
-//      UILabel *bulletsLabel = [[UILabel alloc] init];
-//      [bulletsLabel setText:@"..."];
-//      [bulletsLabel setTextColor:[UIColor redColor]];
-//      [_expandMarkView addSubview:bulletsLabel];
-//      [_expandMarkView setBackgroundColor:[UIColor redColor]];
-//      _expandMarkView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin| UIViewAutoresizingFlexibleTopMargin;
-//      [self addSubview:_expandMarkView];
-//      
-//    }
     
     [self addGestureRecognizers];
   }
@@ -74,10 +57,12 @@
 - (void)layoutSubviews {
   [_titleLabel setFrame:[_node titleRect]];
   [_imageView setFrame:[_node imageRect]];
+  
   [_bodyWebView setFrame:[_node bodyRect]];
-  [_expandMarkView setFrame:CGRectMake(CGRectGetMaxX([_node nodeRect]) - 10,
-                                       CGRectGetMaxY([_node nodeRect]) - 10, 20, 20)];
-
+  
+  if (![_bodyWebView isHidden]) {
+    [_bodyWebView loadHTMLString:[_node body] baseURL:nil];
+  }
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -100,7 +85,7 @@
 
 - (void)loadImageAsync {
   __block UIImageView *blockimage = _imageView;
-  __block NSString *url = [NSString stringWithFormat:@"http://ggg.instigate-training-center.am/%@",[_node imageUrl]];
+  __block NSString *url = [NSString stringWithFormat:@"http://%@/%@", [_node domain], [_node imageUrl]];
   
   dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
   dispatch_async(queue, ^{

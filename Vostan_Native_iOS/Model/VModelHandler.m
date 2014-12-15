@@ -41,7 +41,7 @@ static VModelHandler *instance = nil;
 
 #pragma  mark -
 - (NSString *)getFormatedRequestStringForDomain:(NSString *)domain andRootID:(NSUInteger)rootID {
-  return [NSString stringWithFormat:@"http://%@/api.php/map/root/%i/lang/hy", domain, (int)rootID];
+  return [NSString stringWithFormat:@"http://%@/api.php/map/root/%i/lang/en", domain, (int)rootID];
 }
 
 #pragma  mark -
@@ -52,7 +52,7 @@ static VModelHandler *instance = nil;
   [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
     NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:nil];
     if (jsonDict) {
-      VGraph *graph = [[VGraph alloc] initWithDictionary:jsonDict];
+      VGraph *graph = [[VGraph alloc] initWithDictionary:jsonDict andDomain:ggg];
       [graph setDomain:ggg];
       block(graph);
     }
