@@ -10,10 +10,11 @@
 
 @interface VNodeView ()
 
-@property (nonatomic, strong) IBOutlet UILabel *titleLabel;
-@property (nonatomic, strong) IBOutlet UIImageView *imageView;
-@property (nonatomic, strong) IBOutlet UIWebView *bodyWebView;
-@property (nonatomic, strong) VNode *nodeObj;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIWebView *bodyWebView;
+@property (nonatomic, strong) UIView *expandMarkView;
+@property (nonatomic, strong) VNode *node;
 @end
 
 @implementation VNodeView
@@ -22,30 +23,61 @@
   self = [super initWithFrame:[node nodeRect]];
   
   if (self) {
-    _nodeObj = node;
+    _node = node;
     
     [self setBackgroundColor:[UIColor whiteColor]];
     
-    _titleLabel = [[UILabel alloc] initWithFrame:[_nodeObj titleRect]];
-    [_titleLabel setText:[_nodeObj title]];
-    [_titleLabel setHidden:![_nodeObj titleVisible]];
+    _titleLabel = [[UILabel alloc] init];
+    [_titleLabel setText:[_node title]];
+    [_titleLabel setHidden:![_node titleVisible]];
     [self setTitleStyle];
     [self addSubview:_titleLabel];
     
-    _bodyWebView = [[UIWebView alloc] initWithFrame:[_nodeObj bodyRect]];
-    [_bodyWebView setHidden:![_nodeObj bodyVisible]];
+    _bodyWebView = [[UIWebView alloc] init];
+    [_bodyWebView setHidden:![_node bodyVisible]];
     [self addSubview:_bodyWebView];
     
-    
+    // Hack to make webView scrollable
+    for (id subview in _bodyWebView.subviews) {
+      if ([subview isKindOfClass: [UIScrollView class]]) {
+        ((UIScrollView *)subview).scrollEnabled = YES;
+        break;
+      }
+    }
+  
     if (![_bodyWebView isHidden]) {
-      [_bodyWebView loadHTMLString:[_nodeObj body] baseURL:nil];
+      [_bodyWebView loadHTMLString:[_node body] baseURL:nil];
     }
     
-    _imageView = [[UIImageView alloc] initWithFrame:[_nodeObj imageRect]];
-    [_imageView setHidden:![_nodeObj imageVisible]];
+    _imageView = [[UIImageView alloc] init];
+    [_imageView setHidden:![_node imageVisible]];
+    [_imageView setContentMode:UIViewContentModeScaleAspectFit];
     [self addSubview:_imageView];
+    
+//    if (![_node isLeaf]) {
+//      _expandMarkView = [[UIView alloc] init];
+//      UILabel *bulletsLabel = [[UILabel alloc] init];
+//      [bulletsLabel setText:@"..."];
+//      [bulletsLabel setTextColor:[UIColor redColor]];
+//      [_expandMarkView addSubview:bulletsLabel];
+//      [_expandMarkView setBackgroundColor:[UIColor redColor]];
+//      _expandMarkView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin| UIViewAutoresizingFlexibleTopMargin;
+//      [self addSubview:_expandMarkView];
+//      
+//    }
+    
+    [self addGestureRecognizers];
   }
   return self;
+}
+
+- (void)layoutSubviews {
+  [_titleLabel setFrame:[_node titleRect]];
+  [_imageView setFrame:[_node imageRect]];
+  [_bodyWebView setFrame:[_node bodyRect]];
+  [_expandMarkView setFrame:CGRectMake(CGRectGetMaxX([_node nodeRect]) - 10,
+                                       CGRectGetMaxY([_node nodeRect]) - 10, 20, 20)];
+
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -57,12 +89,18 @@
 
 - (void)setTitleStyle {
   [_titleLabel setTextColor:[UIColor nodeTitleColor]];
-  [_titleLabel setFont:[UIFont fontWithName:@"Verdana" size:20]];
+  [_titleLabel setFont:[UIFont fontWithName:@"Cochin-Bold" size:19]];
+  [_titleLabel setLineBreakMode:NSLineBreakByWordWrapping];
+  [_titleLabel sizeToFit];
+}
+
+- (NSUInteger)getNodeID {
+  return [_node nodeID];
 }
 
 - (void)loadImageAsync {
   __block UIImageView *blockimage = _imageView;
-  __block NSString *url = [NSString stringWithFormat:@"http://ggg.instigate-training-center.am/%@",[_nodeObj imageUrl]];
+  __block NSString *url = [NSString stringWithFormat:@"http://ggg.instigate-training-center.am/%@",[_node imageUrl]];
   
   dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
   dispatch_async(queue, ^{
@@ -72,6 +110,34 @@
       blockimage = nil;
     });
   });
+}
+
+- (void)addGestureRecognizers {
+  UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                      action:@selector(handleTap:)];
+  [self addGestureRecognizer:tap];
+
+  UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self
+                                                action:@selector(handleLongPress:)];
+  [longPress setMinimumPressDuration:0.5]; //seconds
+  [self addGestureRecognizer:longPress];
+}
+
+#pragma mark -
+- (void)handleTap:(UITapGestureRecognizer *)recognizer {
+  if ([_node isLeaf]) {
+    return;
+  }
+  
+  if (_delegate && [_delegate respondsToSelector:@selector(didTapNodeView:)]) {
+    [_delegate didTapNodeView:self];
+  }
+}
+
+- (void)handleLongPress:(UILongPressGestureRecognizer *)recognizer {
+  if (_delegate && [_delegate respondsToSelector:@selector(didLongPressNodeView:)]) {
+    [_delegate didLongPressNodeView:self];
+  }
 }
 
 

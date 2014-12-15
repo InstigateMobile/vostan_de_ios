@@ -53,6 +53,7 @@ static VModelHandler *instance = nil;
     NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:nil];
     if (jsonDict) {
       VGraph *graph = [[VGraph alloc] initWithDictionary:jsonDict];
+      [graph setDomain:ggg];
       block(graph);
     }
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

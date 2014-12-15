@@ -11,10 +11,11 @@
 #import "VNodeView.h"
 #import "VGraphView.h"
 
-@interface VMainViewController () <VModelHandlerDelegate>
+@interface VMainViewController () <VModelHandlerDelegate, VGraphViewDelegate>
 
 //@property (nonatomic, weak) IBOutlet UIView *placeholderView;
 @property (nonatomic, strong) IBOutlet UIView *graphView;
+@property (nonatomic, strong) VGraphView *currentGraph;
 
 @property (nonatomic, strong) NSString *selectedGGG;
 
@@ -43,11 +44,28 @@
 
 - (IBAction)onClick:(id)sender {
   [[VModelHandler instance] requestGraphWithRoot:1 fromGGG:_selectedGGG completion:^(VGraph *graph) {
-    VGraphView *newGraph = [[VGraphView alloc] initGraphViewWithGraph:graph];
-    [newGraph setFrame:_graphView.frame];
-    [newGraph setNeedsDisplay
-     ];
-    [_graphView addSubview:newGraph];
+    if (_currentGraph) {
+      [_currentGraph removeFromSuperview];
+    }
+    _currentGraph = [[VGraphView alloc] initGraphViewWithGraph:graph];
+    [_currentGraph setFrame:_graphView.frame];
+//    [_currentGraph setNeedsDisplay];
+    [_currentGraph setDelegate:self];
+    [_graphView addSubview:_currentGraph];
+  }];
+}
+
+#pragma mark - VGraphViewDelegate
+- (void)didReqestNavigationToRoot:(NSUInteger)root sender:(id)sender {
+  VGraphView *graphView = (VGraphView *)sender;
+  [[VModelHandler instance] requestGraphWithRoot:(int)root fromGGG:[graphView getDomain] completion:^(VGraph *graph) {
+    if (_currentGraph) {
+      [_currentGraph removeFromSuperview];
+    }
+    _currentGraph = [[VGraphView alloc] initGraphViewWithGraph:graph];
+    [_currentGraph setFrame:_graphView.frame];
+    [_currentGraph setDelegate:self];
+    [_graphView addSubview:_currentGraph];
   }];
 }
 

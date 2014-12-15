@@ -11,7 +11,7 @@
 #import "VLink.h"
 #import "VColor.h"
 
-@interface VGraphView ()
+@interface VGraphView () <VNodeViewDelegate>
 @property (strong) VGraph *graph;
 
 @property (strong) NSMutableArray *nodeViews;
@@ -33,10 +33,15 @@
     for (id node in [_graph nodes]) {
       [_nodeViews addObject:[[VNodeView alloc] initWithNode:(VNode *)node]];
       [[_nodeViews lastObject] loadImageAsync];
+      [(VNodeView *)[_nodeViews lastObject] setDelegate:self];
       [self addSubview:[_nodeViews lastObject]];
     }
   }
   return self;
+}
+
+- (NSString *)getDomain {
+  return [_graph domain];
 }
 
 - (BOOL)autoresizesSubviews {
@@ -68,6 +73,16 @@
 ////  [shapeLayer setPath:path.CGPath];
 ////  [[self layer] addSublayer:shapeLayer];
 //}
+
+#pragma mark - VNodeDelegate
+- (void)didTapNodeView:(id)sender {
+  VNodeView *nodeView = (VNodeView *)sender;
+  [_delegate didReqestNavigationToRoot:[nodeView getNodeID] sender:self];
+}
+
+- (void)didLongPressNodeView:(id)sender {
+  
+}
 
 
 @end

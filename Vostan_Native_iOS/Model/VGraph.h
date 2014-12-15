@@ -9,6 +9,7 @@
 
 @interface VGraph : NSObject
 
+@property NSString *domain;
 @property NSUInteger rootID;
 @property NSArray *nodes;
 @property NSArray *links;

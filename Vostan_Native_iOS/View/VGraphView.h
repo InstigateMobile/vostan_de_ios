@@ -8,8 +8,16 @@
 #import <UIKit/UIKit.h>
 @class VGraph;
 
+@protocol VGraphViewDelegate <NSObject>
+
+- (void)didReqestNavigationToRoot:(NSUInteger)root sender:(id)sender;
+
+@end
+
 @interface VGraphView : UIView
+@property (nonatomic, weak) id <VGraphViewDelegate> delegate;
 
 - (id)initGraphViewWithGraph:(VGraph *)graph;
+- (NSString *)getDomain;
 
 @end
