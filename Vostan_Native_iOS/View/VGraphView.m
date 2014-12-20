@@ -31,10 +31,14 @@
     [self setBackgroundColor:[UIColor clearColor]];
     
     for (id node in [_graph nodes]) {
+      // Skip carousel nodes
+      if ([(VNode *)node isCarousel]) {
+        continue;
+      }
+      
       [_nodeViews addObject:[[VNodeView alloc] initWithNode:(VNode *)node]];
       [[_nodeViews lastObject] loadImageAsync];
       [(VNodeView *)[_nodeViews lastObject] setDelegate:self];
-      [self addSubview:[_nodeViews lastObject]];
     }
   }
   return self;
@@ -52,27 +56,39 @@
   return UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 }
 
-//- (void)drawRect:(CGRect)rect {
-//  // Drawing links
-////    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-////    [shapeLayer setFrame:self.frame];
-////    [shapeLayer setFillColor:[[UIColor clearColor] CGColor]];
-////    [shapeLayer setStrokeColor:[[UIColor redColor] CGColor]];
-////    [shapeLayer setLineWidth:2];
-////    [shapeLayer setLineJoin:kCALineJoinRound];
-////  UIBezierPath *path;
-////  for (VLink *link in [_graph links]) {
-////    path = [UIBezierPath bezierPath];
-////    
-////    CGRect rect = [[_graph nodeWithID:[link nodeID]] nodeRect];
-////    [path moveToPoint:CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect))];
-////    CGRect linkedRect = [[_graph nodeWithID:[link linkedNodeID]] nodeRect];
-////    [path moveToPoint:CGPointMake(CGRectGetMidX(linkedRect), CGRectGetMidY(rect))];
-////    
-////  }
-////  [shapeLayer setPath:path.CGPath];
-////  [[self layer] addSublayer:shapeLayer];
-//}
+- (void)layoutSubviews {
+  for (VNodeView *nodeView in _nodeViews) {
+    [self addSubview:nodeView];
+  }
+}
+
+- (void)drawRect:(CGRect)rect {
+  if (!_graph) {
+    return;
+  }
+
+  // Drawing links
+  UIBezierPath *path = [UIBezierPath bezierPath];
+  for (VLink *link in [_graph links]) {
+    CGRect firstRect = [[_graph nodeWithID:[link nodeID]] nodeRect];
+    CGRect secondRect = [[_graph nodeWithID:[link linkedNodeID]] nodeRect];
+    
+    if (CGRectIsEmpty(firstRect) || CGRectIsEmpty(secondRect)) {
+      continue;
+    }
+
+    [path moveToPoint:CGPointMake(CGRectGetMidX(firstRect), CGRectGetMidY(firstRect))];
+    [path addLineToPoint:CGPointMake(CGRectGetMidX(secondRect), CGRectGetMidY(secondRect))];
+  }
+  
+  CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+  [shapeLayer setPath:[path CGPath]];
+  [shapeLayer setStrokeColor:[[UIColor nodeBorderColor] CGColor]];
+  [shapeLayer setFillColor:[[UIColor clearColor] CGColor]];
+  [shapeLayer setLineJoin:kCALineJoinRound];
+  [shapeLayer setLineWidth:1.0];
+  [self.layer addSublayer:shapeLayer];
+}
 
 #pragma mark - VNodeDelegate
 - (void)didTapNodeView:(id)sender {

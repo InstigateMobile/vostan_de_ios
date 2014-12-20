@@ -41,7 +41,7 @@ static VModelHandler *instance = nil;
 
 #pragma  mark -
 - (NSString *)getFormatedRequestStringForDomain:(NSString *)domain andRootID:(NSUInteger)rootID {
-  return [NSString stringWithFormat:@"http://%@/api.php/map/root/%i/lang/en", domain, (int)rootID];
+  return [NSString stringWithFormat:@"http://%@/api.php/map/root/%i/lang/hy", domain, (int)rootID];
 }
 
 #pragma  mark -

@@ -44,6 +44,10 @@
       }
     }
     
+    if (![_bodyWebView isHidden]) {
+      [_bodyWebView loadHTMLString:[_node body] baseURL:nil];
+    }
+    
     _imageView = [[UIImageView alloc] init];
     [_imageView setHidden:![_node imageVisible]];
     [_imageView setContentMode:UIViewContentModeScaleAspectFit];
@@ -57,12 +61,7 @@
 - (void)layoutSubviews {
   [_titleLabel setFrame:[_node titleRect]];
   [_imageView setFrame:[_node imageRect]];
-  
   [_bodyWebView setFrame:[_node bodyRect]];
-  
-  if (![_bodyWebView isHidden]) {
-    [_bodyWebView loadHTMLString:[_node body] baseURL:nil];
-  }
 }
 
 - (void)drawRect:(CGRect)rect {
