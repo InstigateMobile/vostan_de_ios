@@ -51,6 +51,7 @@ UITableViewDataSource, UITableViewDelegate, UIPopoverControllerDelegate>
   // Setup list table
   CGRect gggListRect = CGRectMake(0, 0, GGGTableViewCellWidth, GGGTableViewCellHeight * _gggArray.count);
   _gggListVeiw = [[UITableView alloc] initWithFrame:gggListRect];
+  [_gggListVeiw setBounces:NO];
   [_gggListVeiw setDataSource:self];
   [_gggListVeiw setDelegate:self];
   [_gggListVeiw registerNib:[UINib nibWithNibName:[GGGTableViewCell reuseIdentifier] bundle:[NSBundle mainBundle]]forCellReuseIdentifier:[GGGTableViewCell reuseIdentifier]];
@@ -77,6 +78,10 @@ UITableViewDataSource, UITableViewDelegate, UIPopoverControllerDelegate>
   [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+  return UIStatusBarStyleLightContent;
+}
+
 #pragma mark -
 - (IBAction)onClick:(id)sender {
   if ([_gggListPopover isPopoverVisible]) {
@@ -85,7 +90,7 @@ UITableViewDataSource, UITableViewDelegate, UIPopoverControllerDelegate>
   }
   
   CGRect parentFrame = [(UIButton *)sender frame];
-  parentFrame.origin.y += 20;
+  parentFrame.origin.y = 15;
   [_gggListPopover  presentPopoverFromRect:parentFrame
                                     inView:self.view
                   permittedArrowDirections:UIPopoverArrowDirectionDown

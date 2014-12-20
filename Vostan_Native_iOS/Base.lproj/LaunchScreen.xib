@@ -13,7 +13,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="web.png" translatesAutoresizingMaskIntoConstraints="NO" id="DUw-u6-MvW">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                 </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  Copyright (c) 2014 AUA. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="  Copyright (c) 2014 AUA. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
                     <rect key="frame" x="20" y="439" width="441" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="0.98097631399999996" blue="0.93613946810000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -47,12 +47,12 @@
                     <exclude reference="DUw-u6-MvW"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="QKR-us-y5C"/>
+                    <exclude reference="ewW-CY-nCB"/>
                     <exclude reference="6V2-Yb-pqf"/>
                     <exclude reference="LhG-dt-apI"/>
                     <exclude reference="SFa-Oh-wag"/>
                     <exclude reference="Y1c-jc-hbA"/>
-                    <exclude reference="QKR-us-y5C"/>
-                    <exclude reference="ewW-CY-nCB"/>
                     <exclude reference="PPk-vT-ple"/>
                     <exclude reference="pnd-5J-VHQ"/>
                 </mask>
@@ -62,12 +62,12 @@
                     <include reference="DUw-u6-MvW"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="QKR-us-y5C"/>
+                    <include reference="ewW-CY-nCB"/>
                     <include reference="6V2-Yb-pqf"/>
                     <include reference="LhG-dt-apI"/>
                     <include reference="SFa-Oh-wag"/>
                     <include reference="Y1c-jc-hbA"/>
-                    <include reference="QKR-us-y5C"/>
-                    <include reference="ewW-CY-nCB"/>
                     <include reference="PPk-vT-ple"/>
                     <include reference="pnd-5J-VHQ"/>
                 </mask>

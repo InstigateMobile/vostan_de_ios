@@ -70,10 +70,14 @@
   // Drawing links
   UIBezierPath *path = [UIBezierPath bezierPath];
   for (VLink *link in [_graph links]) {
-    CGRect firstRect = [[_graph nodeWithID:[link nodeID]] nodeRect];
-    CGRect secondRect = [[_graph nodeWithID:[link linkedNodeID]] nodeRect];
+    VNode *firstNode = [_graph nodeWithID:[link nodeID]];
+    VNode *secondNode = [_graph nodeWithID:[link linkedNodeID]];
+    CGRect firstRect = [firstNode nodeRect];
+    CGRect secondRect = [secondNode nodeRect];
     
-    if (CGRectIsEmpty(firstRect) || CGRectIsEmpty(secondRect)) {
+    // Skip carousel links
+    if (CGRectIsEmpty(firstRect) || CGRectIsEmpty(secondRect)
+        || [firstNode isCarousel] || [secondNode isCarousel]) {
       continue;
     }
 

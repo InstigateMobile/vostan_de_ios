@@ -7,12 +7,15 @@
 
 #import "VNodeView.h"
 #import "VColor.h"
+#import "VTitleLabel.h"
 
 @interface VNodeView ()
 
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIWebView *bodyWebView;
+@property (nonatomic, strong) UILabel *tagsLabel;
+@property (nonatomic, strong) UILabel *bulletsLabel;
 @property (nonatomic, strong) VNode *node;
 @end
 
@@ -44,6 +47,7 @@
       }
     }
     
+    [_bodyWebView setBackgroundColor:[UIColor whiteColor]];
     if (![_bodyWebView isHidden]) {
       [_bodyWebView loadHTMLString:[_node body] baseURL:nil];
     }
@@ -53,6 +57,21 @@
     [_imageView setContentMode:UIViewContentModeScaleAspectFit];
     [self addSubview:_imageView];
     
+    _tagsLabel = [[UILabel alloc] init];
+    [_tagsLabel setText:[_node tags]];
+    [_tagsLabel setFont:[UIFont fontWithName:@"Cochin-Bold" size:12]];
+    [_tagsLabel setTextColor:[UIColor darkGrayColor]];
+    [_tagsLabel setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin];
+    [self addSubview:_tagsLabel];
+    
+    if (![_node isLeaf]) {
+      _bulletsLabel = [[UILabel alloc] init];
+      [_bulletsLabel setText:@"..."];
+      [_bulletsLabel setTextColor:[UIColor darkGrayColor]];
+      [_bulletsLabel setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin];
+      [self addSubview:_bulletsLabel];
+    }
+    
     [self addGestureRecognizers];
   }
   return self;
@@ -60,8 +79,19 @@
 
 - (void)layoutSubviews {
   [_titleLabel setFrame:[_node titleRect]];
+  [_titleLabel sizeToFitFixedWidth:CGRectGetWidth([_node titleRect])];
+  
   [_imageView setFrame:[_node imageRect]];
   [_bodyWebView setFrame:[_node bodyRect]];
+  
+  [_tagsLabel sizeToFit];
+  [_tagsLabel setFrame:CGRectMake(CGRectGetWidth([self frame]) - CGRectGetWidth([_tagsLabel frame]) - 5, 2,
+                                  CGRectGetWidth([_tagsLabel frame]), CGRectGetHeight([_tagsLabel frame]))];
+  
+  if (![_node isLeaf]) {
+    [_bulletsLabel setFrame:CGRectMake(CGRectGetWidth([self frame]) - 25,
+                                       CGRectGetHeight([self frame]) - 25, 20, 20)];
+  }
 }
 
 - (void)drawRect:(CGRect)rect {

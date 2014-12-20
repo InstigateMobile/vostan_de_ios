@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D60FA4461A4567ED004209AD /* GGGTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60FA4451A4567ED004209AD /* GGGTableViewCell.xib */; };
+		D60FA4491A4584F1004209AD /* VTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D60FA4481A4584F1004209AD /* VTitleLabel.m */; };
 		D639B2D91A3F3F980057FD44 /* VGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = D639B2D81A3F3F980057FD44 /* VGraph.m */; };
 		D639B2DD1A3F4B770057FD44 /* VColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D639B2DC1A3F4B770057FD44 /* VColor.m */; };
 		D639B2E21A3F6E460057FD44 /* GGGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D639B2E01A3F6E460057FD44 /* GGGTableViewCell.m */; };
@@ -49,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		D60FA4451A4567ED004209AD /* GGGTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GGGTableViewCell.xib; sourceTree = "<group>"; };
+		D60FA4471A4584F1004209AD /* VTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTitleLabel.h; sourceTree = "<group>"; };
+		D60FA4481A4584F1004209AD /* VTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTitleLabel.m; sourceTree = "<group>"; };
 		D639B2D71A3F3F980057FD44 /* VGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VGraph.h; sourceTree = "<group>"; };
 		D639B2D81A3F3F980057FD44 /* VGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VGraph.m; sourceTree = "<group>"; };
 		D639B2DB1A3F4B770057FD44 /* VColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VColor.h; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 			children = (
 				D639B2DB1A3F4B770057FD44 /* VColor.h */,
 				D639B2DC1A3F4B770057FD44 /* VColor.m */,
+				D60FA4471A4584F1004209AD /* VTitleLabel.h */,
+				D60FA4481A4584F1004209AD /* VTitleLabel.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -408,6 +413,7 @@
 				D6C26F501A3C85CD000B94AF /* AFURLResponseSerialization.m in Sources */,
 				D6C26F511A3C85CD000B94AF /* AFURLSessionManager.m in Sources */,
 				D6C26F331A3C7EF7000B94AF /* VModelHandler.m in Sources */,
+				D60FA4491A4584F1004209AD /* VTitleLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,10 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Zd-52-aX1" userLabel="Graph View" customClass="VGraphView">
-                                <rect key="frame" x="0.0" y="70" width="600" height="530"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ciF-sW-8Tc" userLabel="Top View">
                                 <rect key="frame" x="0.0" y="20" width="600" height="50"/>
                                 <subviews>
@@ -29,9 +25,6 @@
                                             <color key="titleColor" red="1" green="0.98097631399999996" blue="0.93613946810000004" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="32" y="10" width="64" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="onClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PJS-ZJ-aNF"/>
                                         </connections>
@@ -39,8 +32,30 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.4602210853" green="0.69293566419999997" blue="0.89395328439999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="MH7-7y-gDy"/>
+                                    <constraint firstItem="HT7-w3-AoN" firstAttribute="leading" secondItem="ciF-sW-8Tc" secondAttribute="leading" constant="32" id="AMK-6n-Bkc"/>
+                                    <constraint firstAttribute="height" constant="50" id="MH7-7y-gDy">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="70"/>
+                                    </constraint>
+                                    <constraint firstItem="HT7-w3-AoN" firstAttribute="top" secondItem="ciF-sW-8Tc" secondAttribute="top" constant="30" id="dJ4-2W-knX">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                                    </constraint>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="AMK-6n-Bkc"/>
+                                        <exclude reference="dJ4-2W-knX"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="AMK-6n-Bkc"/>
+                                        <include reference="dJ4-2W-knX"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Zd-52-aX1" userLabel="Graph View" customClass="VGraphView">
+                                <rect key="frame" x="0.0" y="70" width="600" height="530"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,7 +69,9 @@
                             <constraint firstItem="3Zd-52-aX1" firstAttribute="top" secondItem="kDf-Yr-xjY" secondAttribute="bottom" id="tDt-Hd-l9c">
                                 <variation key="heightClass=regular-widthClass=regular" constant="30"/>
                             </constraint>
-                            <constraint firstItem="ciF-sW-8Tc" firstAttribute="top" secondItem="kDf-Yr-xjY" secondAttribute="bottom" id="wSL-f1-hw6"/>
+                            <constraint firstItem="ciF-sW-8Tc" firstAttribute="top" secondItem="kDf-Yr-xjY" secondAttribute="bottom" id="wSL-f1-hw6">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-20"/>
+                            </constraint>
                             <constraint firstAttribute="right" secondItem="3Zd-52-aX1" secondAttribute="right" id="wug-d2-bE9"/>
                         </constraints>
                         <variation key="default">
@@ -73,6 +90,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="pSy-UU-Vbi"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -86,16 +104,18 @@
         <!--Navigation Controller-->
         <scene sceneID="CcH-uX-8XS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kw7-pz-EAW" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Kw7-pz-EAW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LS5-eQ-HfL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Miz-De-4e7">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="B3L-jf-Tj9"/>
                     </connections>
