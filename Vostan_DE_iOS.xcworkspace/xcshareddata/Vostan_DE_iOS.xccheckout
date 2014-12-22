@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>569BE292-7BC0-4C57-8862-97FE005CE704</string>
+	<string>15E02D68-144A-4D97-A06E-BF7A9CAECEC8</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Vostan_DE_iOS</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/InstigateMobile/vostan_de_ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Vostan_DE_iOS.xcodeproj</string>
+	<string>Vostan_DE_iOS.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>B9ED257B4DD3148E3EFA2CFD2E93F1D941524B11</key>
-		<string>../..</string>
+		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/InstigateMobile/vostan_de_ios.git</string>

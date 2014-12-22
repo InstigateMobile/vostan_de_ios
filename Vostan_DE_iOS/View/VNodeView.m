@@ -43,6 +43,7 @@
     _node = node;
     
     [self setBackgroundColor:[UIColor whiteColor]];
+    [self setClipsToBounds:YES];
     
     _titleLabel = [[UILabel alloc] init];
     [_titleLabel setText:[_node title]];

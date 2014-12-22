@@ -34,7 +34,7 @@ UITableViewDataSource, UITableViewDelegate, UIPopoverControllerDelegate>
 @property (nonatomic, strong) VGraphView *currentGraph;
 
 @property (nonatomic, strong) NSString *selectedGGG;
-@property (nonatomic, strong) NSMutableArray *gggArray;
+@property (nonatomic, strong) NSArray *gggArray;
 @property (nonatomic, strong) UITableView *gggListVeiw;
 @property (nonatomic, strong) UIPopoverController *gggListPopover;
 
@@ -49,19 +49,8 @@ UITableViewDataSource, UITableViewDelegate, UIPopoverControllerDelegate>
   [[VModelHandler instance] setDelegate:self];
 
   _selectedGGG = nil;
-  _gggArray = [NSMutableArray arrayWithObjects:
-               @"ggg.vostan.net",
-               @"ggg.instigate.am",
-               @"ggg.instigatemobile.com",
-               @"ggg.instigate-training-center.am",
-               @"ggg.instigateconsulting.com",
-               @"ggg.i-gorc.am",
-               @"ggg.instigaterobotics.com",
-               @"ggg.improve.am",
-               @"ggg.yerevak.com",
-               @"ggg.proximusda.com",
-               @"ggg.tri.am",
-               nil];
+
+  _gggArray = [[VModelHandler instance] gggList];
   
   // Setup list table
   CGRect gggListRect = CGRectMake(0, 0, GGGTableViewCellWidth, GGGTableViewCellHeight * _gggArray.count);

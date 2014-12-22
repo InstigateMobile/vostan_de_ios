@@ -30,9 +30,7 @@
 @interface VModelHandler : NSObject
 
 @property (nonatomic, weak) id <VModelHandlerDelegate> delegate;
-
-@property NSMutableArray *nodes;
-@property NSMutableArray *links;
+@property (nonatomic, readonly) NSArray *gggList;
 
 + (VModelHandler *)instance;
 

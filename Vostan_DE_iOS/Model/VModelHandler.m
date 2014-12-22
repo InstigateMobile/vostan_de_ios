@@ -26,7 +26,7 @@
 
 @interface VModelHandler ()
 @property (nonatomic, strong) AFSecurityPolicy *securityPolicy;
-@property (nonatomic, strong) NSDictionary *languageDict;
+@property (nonatomic, strong) NSDictionary *gggDict;
 @property (nonatomic, strong) NSMutableDictionary *tempCache;
 
 @end
@@ -50,24 +50,31 @@ static VModelHandler *instance = nil;
     _securityPolicy = [[AFSecurityPolicy alloc] init];
     [_securityPolicy setAllowInvalidCertificates:YES];
     
-    _languageDict = @{@"ggg.vostan.net" : @"lang/en",
-                      @"ggg.instigate.am" : @"lang/en",
-                      @"ggg.instigatemobile.com" : @"lang/en",
-                      @"ggg.instigate-training-center.am": @"lang/hy",
-                      @"ggg.instigateconsulting.com": @"lang/en",
-                      @"ggg.i-gorc.am": @"lng/hy",
-                      @"ggg.instigaterobotics.com": @"lang/en",
-                      @"ggg.improve.am": @"lang/en",
-                      @"ggg.yerevak.com": @"lang/en",
-                      @"ggg.proximusda.com": @"lang/en",
-                      @"ggg.tri.am": @"lang/en"};
+    _tempCache = [@{} mutableCopy];
+    
+    _gggDict = @{@"ggg.vostan.net" : @"lang/en",
+                 @"ggg.instigate.am" : @"lang/en",
+                 @"ggg.instigatemobile.com" : @"lang/en",
+                 @"ggg.instigate-training-center.am": @"lang/hy",
+                 @"ggg.instigateconsulting.com": @"lang/en",
+                 @"ggg.i-gorc.am": @"lng/hy",
+                 @"ggg.instigaterobotics.com": @"lang/en",
+                 @"ggg.improve.am": @"lang/en",
+                 @"ggg.yerevak.com": @"lang/en",
+                 @"ggg.proximusda.com": @"lang/en",
+                 @"ggg.tri.am": @"lang/en"};
   }
+  
   return self;
+}
+
+- (NSArray *)gggList {
+  return [NSArray arrayWithArray:[_gggDict allKeys]];
 }
 
 #pragma  mark -
 - (NSString *)getFormatedRequestStringForDomain:(NSString *)domain andRootID:(NSUInteger)rootID {
-  return [NSString stringWithFormat:@"http://%@/api.php/map/root/%i/%@", domain, (int)rootID, [_languageDict objectForKey:domain]];
+  return [NSString stringWithFormat:@"http://%@/api.php/map/root/%i/%@", domain, (int)rootID, [_gggDict objectForKey:domain]];
 }
 
 #pragma  mark -
