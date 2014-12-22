@@ -18,7 +18,7 @@
 		D6C26F151A3C7ABF000B94AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6C26F131A3C7ABF000B94AF /* Main.storyboard */; };
 		D6C26F171A3C7ABF000B94AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6C26F161A3C7ABF000B94AF /* Images.xcassets */; };
 		D6C26F1A1A3C7ABF000B94AF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C26F181A3C7ABF000B94AF /* LaunchScreen.xib */; };
-		D6C26F261A3C7AC0000B94AF /* Vostan_Native_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C26F251A3C7AC0000B94AF /* Vostan_Native_iOSTests.m */; };
+		D6C26F261A3C7AC0000B94AF /* Vostan_DE_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C26F251A3C7AC0000B94AF /* Vostan_DE_iOSTests.m */; };
 		D6C26F331A3C7EF7000B94AF /* VModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C26F321A3C7EF7000B94AF /* VModelHandler.m */; };
 		D6C26F491A3C85CD000B94AF /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C26F371A3C85CD000B94AF /* AFHTTPRequestOperation.m */; };
 		D6C26F4A1A3C85CD000B94AF /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C26F391A3C85CD000B94AF /* AFHTTPRequestOperationManager.m */; };
@@ -59,7 +59,7 @@
 		D639B2DF1A3F6E460057FD44 /* GGGTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGGTableViewCell.h; sourceTree = "<group>"; };
 		D639B2E01A3F6E460057FD44 /* GGGTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGGTableViewCell.m; sourceTree = "<group>"; };
 		D639B2E41A3F6ED70057FD44 /* check_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_mark.png; sourceTree = "<group>"; };
-		D6C26F061A3C7ABF000B94AF /* Vostan_Native_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vostan_Native_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6C26F061A3C7ABF000B94AF /* Vostan_DE_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vostan_DE_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C26F0A1A3C7ABF000B94AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6C26F0B1A3C7ABF000B94AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D6C26F0D1A3C7ABF000B94AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -67,9 +67,9 @@
 		D6C26F141A3C7ABF000B94AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D6C26F161A3C7ABF000B94AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D6C26F191A3C7ABF000B94AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		D6C26F1F1A3C7AC0000B94AF /* Vostan_Native_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Vostan_Native_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6C26F241A3C7AC0000B94AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D6C26F251A3C7AC0000B94AF /* Vostan_Native_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Vostan_Native_iOSTests.m; sourceTree = "<group>"; };
+		D6C26F1F1A3C7AC0000B94AF /* Vostan_DE_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Vostan_DE_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6C26F241A3C7AC0000B94AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = Vostan_DE_iOSTests/Info.plist; sourceTree = "<group>"; };
+		D6C26F251A3C7AC0000B94AF /* Vostan_DE_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Vostan_DE_iOSTests.m; sourceTree = "<group>"; };
 		D6C26F311A3C7EF7000B94AF /* VModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VModelHandler.h; sourceTree = "<group>"; };
 		D6C26F321A3C7EF7000B94AF /* VModelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VModelHandler.m; sourceTree = "<group>"; };
 		D6C26F361A3C85CD000B94AF /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -149,8 +149,8 @@
 		D6C26EFD1A3C7ABF000B94AF = {
 			isa = PBXGroup;
 			children = (
-				D6C26F081A3C7ABF000B94AF /* Vostan_Native_iOS */,
-				D6C26F221A3C7AC0000B94AF /* Vostan_Native_iOSTests */,
+				D6C26F081A3C7ABF000B94AF /* Vostan_DE_iOS */,
+				D6C26F221A3C7AC0000B94AF /* Vostan_DE_iOSTests */,
 				D6C26F581A3D9628000B94AF /* CoreGraphics.framework */,
 				D6C26F071A3C7ABF000B94AF /* Products */,
 			);
@@ -159,13 +159,13 @@
 		D6C26F071A3C7ABF000B94AF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D6C26F061A3C7ABF000B94AF /* Vostan_Native_iOS.app */,
-				D6C26F1F1A3C7AC0000B94AF /* Vostan_Native_iOSTests.xctest */,
+				D6C26F061A3C7ABF000B94AF /* Vostan_DE_iOS.app */,
+				D6C26F1F1A3C7AC0000B94AF /* Vostan_DE_iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D6C26F081A3C7ABF000B94AF /* Vostan_Native_iOS */ = {
+		D6C26F081A3C7ABF000B94AF /* Vostan_DE_iOS */ = {
 			isa = PBXGroup;
 			children = (
 				D639B2DA1A3F4B4F0057FD44 /* Category */,
@@ -180,7 +180,7 @@
 				D6C26F161A3C7ABF000B94AF /* Images.xcassets */,
 				D6C26F091A3C7ABF000B94AF /* Supporting Files */,
 			);
-			path = Vostan_Native_iOS;
+			path = Vostan_DE_iOS;
 			sourceTree = "<group>";
 		};
 		D6C26F091A3C7ABF000B94AF /* Supporting Files */ = {
@@ -194,13 +194,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D6C26F221A3C7AC0000B94AF /* Vostan_Native_iOSTests */ = {
+		D6C26F221A3C7AC0000B94AF /* Vostan_DE_iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				D6C26F251A3C7AC0000B94AF /* Vostan_Native_iOSTests.m */,
+				D6C26F251A3C7AC0000B94AF /* Vostan_DE_iOSTests.m */,
 				D6C26F231A3C7AC0000B94AF /* Supporting Files */,
 			);
-			path = Vostan_Native_iOSTests;
+			path = Vostan_DE_iOSTests;
 			sourceTree = "<group>";
 		};
 		D6C26F231A3C7AC0000B94AF /* Supporting Files */ = {
@@ -208,7 +208,7 @@
 			children = (
 				D6C26F241A3C7AC0000B94AF /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		D6C26F2F1A3C7BA2000B94AF /* Model */ = {
@@ -293,9 +293,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D6C26F051A3C7ABF000B94AF /* Vostan_Native_iOS */ = {
+		D6C26F051A3C7ABF000B94AF /* Vostan_DE_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D6C26F291A3C7AC0000B94AF /* Build configuration list for PBXNativeTarget "Vostan_Native_iOS" */;
+			buildConfigurationList = D6C26F291A3C7AC0000B94AF /* Build configuration list for PBXNativeTarget "Vostan_DE_iOS" */;
 			buildPhases = (
 				D6C26F021A3C7ABF000B94AF /* Sources */,
 				D6C26F031A3C7ABF000B94AF /* Frameworks */,
@@ -305,14 +305,14 @@
 			);
 			dependencies = (
 			);
-			name = Vostan_Native_iOS;
+			name = Vostan_DE_iOS;
 			productName = Vostan_Natoive_iOS;
-			productReference = D6C26F061A3C7ABF000B94AF /* Vostan_Native_iOS.app */;
+			productReference = D6C26F061A3C7ABF000B94AF /* Vostan_DE_iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D6C26F1E1A3C7AC0000B94AF /* Vostan_Native_iOSTests */ = {
+		D6C26F1E1A3C7AC0000B94AF /* Vostan_DE_iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D6C26F2C1A3C7AC0000B94AF /* Build configuration list for PBXNativeTarget "Vostan_Native_iOSTests" */;
+			buildConfigurationList = D6C26F2C1A3C7AC0000B94AF /* Build configuration list for PBXNativeTarget "Vostan_DE_iOSTests" */;
 			buildPhases = (
 				D6C26F1B1A3C7AC0000B94AF /* Sources */,
 				D6C26F1C1A3C7AC0000B94AF /* Frameworks */,
@@ -323,9 +323,9 @@
 			dependencies = (
 				D6C26F211A3C7AC0000B94AF /* PBXTargetDependency */,
 			);
-			name = Vostan_Native_iOSTests;
+			name = Vostan_DE_iOSTests;
 			productName = Vostan_Natoive_iOSTests;
-			productReference = D6C26F1F1A3C7AC0000B94AF /* Vostan_Native_iOSTests.xctest */;
+			productReference = D6C26F1F1A3C7AC0000B94AF /* Vostan_DE_iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -346,7 +346,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D6C26F011A3C7ABF000B94AF /* Build configuration list for PBXProject "Vostan_Native_iOS" */;
+			buildConfigurationList = D6C26F011A3C7ABF000B94AF /* Build configuration list for PBXProject "Vostan_DE_iOS" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -359,8 +359,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D6C26F051A3C7ABF000B94AF /* Vostan_Native_iOS */,
-				D6C26F1E1A3C7AC0000B94AF /* Vostan_Native_iOSTests */,
+				D6C26F051A3C7ABF000B94AF /* Vostan_DE_iOS */,
+				D6C26F1E1A3C7AC0000B94AF /* Vostan_DE_iOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -421,7 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6C26F261A3C7AC0000B94AF /* Vostan_Native_iOSTests.m in Sources */,
+				D6C26F261A3C7AC0000B94AF /* Vostan_DE_iOSTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,7 +430,7 @@
 /* Begin PBXTargetDependency section */
 		D6C26F211A3C7AC0000B94AF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D6C26F051A3C7ABF000B94AF /* Vostan_Native_iOS */;
+			target = D6C26F051A3C7ABF000B94AF /* Vostan_DE_iOS */;
 			targetProxy = D6C26F201A3C7AC0000B94AF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -538,10 +538,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Vostan_Native_iOS/Prefix.pch;
-				INFOPLIST_FILE = Vostan_Native_iOS/Info.plist;
+				GCC_PREFIX_HEADER = Vostan_DE_iOS/Prefix.pch;
+				INFOPLIST_FILE = Vostan_DE_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = Vostan_Native_iOS;
+				PRODUCT_NAME = Vostan_DE_iOS;
 			};
 			name = Debug;
 		};
@@ -550,10 +551,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Vostan_Native_iOS/Prefix.pch;
-				INFOPLIST_FILE = Vostan_Native_iOS/Info.plist;
+				GCC_PREFIX_HEADER = Vostan_DE_iOS/Prefix.pch;
+				INFOPLIST_FILE = Vostan_DE_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = Vostan_Native_iOS;
+				PRODUCT_NAME = Vostan_DE_iOS;
 			};
 			name = Release;
 		};
@@ -571,9 +573,9 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = Vostan_Native_iOSTests/Info.plist;
+				INFOPLIST_FILE = Vostan_DE_iOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = Vostan_Native_iOSTests;
+				PRODUCT_NAME = Vostan_DE_iOSTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vostan_Native_iOS.app/Vostan_Native_iOS";
 			};
 			name = Debug;
@@ -588,9 +590,9 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = Vostan_Native_iOSTests/Info.plist;
+				INFOPLIST_FILE = Vostan_DE_iOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = Vostan_Native_iOSTests;
+				PRODUCT_NAME = Vostan_DE_iOSTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vostan_Native_iOS.app/Vostan_Native_iOS";
 			};
 			name = Release;
@@ -598,7 +600,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D6C26F011A3C7ABF000B94AF /* Build configuration list for PBXProject "Vostan_Native_iOS" */ = {
+		D6C26F011A3C7ABF000B94AF /* Build configuration list for PBXProject "Vostan_DE_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D6C26F271A3C7AC0000B94AF /* Debug */,
@@ -607,7 +609,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D6C26F291A3C7AC0000B94AF /* Build configuration list for PBXNativeTarget "Vostan_Native_iOS" */ = {
+		D6C26F291A3C7AC0000B94AF /* Build configuration list for PBXNativeTarget "Vostan_DE_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D6C26F2A1A3C7AC0000B94AF /* Debug */,
@@ -616,7 +618,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D6C26F2C1A3C7AC0000B94AF /* Build configuration list for PBXNativeTarget "Vostan_Native_iOSTests" */ = {
+		D6C26F2C1A3C7AC0000B94AF /* Build configuration list for PBXNativeTarget "Vostan_DE_iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D6C26F2D1A3C7AC0000B94AF /* Debug */,

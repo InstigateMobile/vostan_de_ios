@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Vostan_Native_iOS.xcodeproj">
+      location = "self:Vostan_DE_iOS.xcodeproj">
    </FileRef>
 </Workspace>
