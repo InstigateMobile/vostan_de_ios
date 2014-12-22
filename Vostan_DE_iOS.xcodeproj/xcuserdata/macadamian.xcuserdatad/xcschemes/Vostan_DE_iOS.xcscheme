@@ -15,23 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D6C26F051A3C7ABF000B94AF"
-               BuildableName = "Vostan_Native_iOS.app"
-               BlueprintName = "Vostan_Native_iOS"
-               ReferencedContainer = "container:Vostan_Native_iOS.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D6C26F1E1A3C7AC0000B94AF"
-               BuildableName = "Vostan_Native_iOSTests.xctest"
-               BlueprintName = "Vostan_Native_iOSTests"
-               ReferencedContainer = "container:Vostan_Native_iOS.xcodeproj">
+               BuildableName = "Vostan_DE_iOS.app"
+               BlueprintName = "Vostan_DE_iOS"
+               ReferencedContainer = "container:Vostan_DE_iOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,24 +28,14 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D6C26F1E1A3C7AC0000B94AF"
-               BuildableName = "Vostan_Native_iOSTests.xctest"
-               BlueprintName = "Vostan_Native_iOSTests"
-               ReferencedContainer = "container:Vostan_Native_iOS.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D6C26F051A3C7ABF000B94AF"
-            BuildableName = "Vostan_Native_iOS.app"
-            BlueprintName = "Vostan_Native_iOS"
-            ReferencedContainer = "container:Vostan_Native_iOS.xcodeproj">
+            BuildableName = "Vostan_DE_iOS.app"
+            BlueprintName = "Vostan_DE_iOS"
+            ReferencedContainer = "container:Vostan_DE_iOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D6C26F051A3C7ABF000B94AF"
-            BuildableName = "Vostan_Native_iOS.app"
-            BlueprintName = "Vostan_Native_iOS"
-            ReferencedContainer = "container:Vostan_Native_iOS.xcodeproj">
+            BuildableName = "Vostan_DE_iOS.app"
+            BlueprintName = "Vostan_DE_iOS"
+            ReferencedContainer = "container:Vostan_DE_iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D6C26F051A3C7ABF000B94AF"
-            BuildableName = "Vostan_Native_iOS.app"
-            BlueprintName = "Vostan_Native_iOS"
-            ReferencedContainer = "container:Vostan_Native_iOS.xcodeproj">
+            BuildableName = "Vostan_DE_iOS.app"
+            BlueprintName = "Vostan_DE_iOS"
+            ReferencedContainer = "container:Vostan_DE_iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
