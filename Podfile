@@ -3,6 +3,7 @@ platform :ios, '8.0'
 
 target 'Vostan_DE_iOS' do
 pod "AFNetworking", "~> 2.0"
+pod 'UIImage+SVG', '~> 0.1'
 
 end
 

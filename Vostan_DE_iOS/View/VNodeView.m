@@ -23,6 +23,7 @@
 #import "VNodeView.h"
 #import "VColor.h"
 #import "VTitleLabel.h"
+#import "SVGParser.h"
 
 @interface VNodeView ()
 
@@ -131,14 +132,23 @@
 - (void)loadImageAsync {
   __block UIImageView *blockimage = _imageView;
   __block NSString *url = [NSString stringWithFormat:@"http://%@/%@", [_node domain], [_node imageUrl]];
+  __block CGSize imageSize = _node.imageRect.size;
   
   dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
   dispatch_async(queue, ^{
     NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
-    dispatch_sync(dispatch_get_main_queue(), ^{
-      blockimage.image = [UIImage imageWithData:imageData];
-      blockimage = nil;
-    });
+    
+    if ([[url pathExtension] isEqualToString:@"svg"]) {
+      dispatch_sync(dispatch_get_main_queue(), ^{
+        blockimage.image = [UIImage imageWithSize:imageSize andSVGData:imageData];
+        blockimage = nil;
+      });
+    } else {
+      dispatch_sync(dispatch_get_main_queue(), ^{
+        blockimage.image = [UIImage imageWithData:imageData];
+        blockimage = nil;
+      });
+    }
   });
 }
 
